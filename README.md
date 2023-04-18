@@ -1,0 +1,2 @@
+# simple-multipage
+Hugo Theme
