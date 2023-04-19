@@ -7,7 +7,7 @@
 </ul>
 <h2>Main</h2>
 <ul>
-        {{ range .Site.Pages }}
+        {{ range .Site.Pages.ByParam "main_menu_order" }}
 		{{ if eq .Params.main_menu true }}
                 	<li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
 		{{ end }}
