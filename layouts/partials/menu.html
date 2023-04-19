@@ -1,0 +1,15 @@
+<h1>MENU</h1>
+<h2>All</h2>
+<ul>
+        {{ range .Site.Pages }}
+        	<li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+        {{ end }}
+</ul>
+<h2>Main</h2>
+<ul>
+        {{ range .Site.Pages }}
+		{{ if eq .Params.main_menu true }}
+                	<li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+		{{ end }}
+        {{ end }}
+</ul>

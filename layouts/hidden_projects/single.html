@@ -4,8 +4,8 @@
     <body>
         {{- partial "header.html" . -}}
         <div id="content">
-	<h1>SINGLE</h1>
-        {{- partial "menu.html" . -}}
+	<h1>HIDDEN PROJECT SINGLE</h1>
+        {{ partial "menu_hidden_project.html" . }}
 	<h1>{{ .Title }}</h1>
 	{{ .Content }}
         </div>
