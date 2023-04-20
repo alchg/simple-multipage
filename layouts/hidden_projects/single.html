@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html>
-    {{ partial "head.html" . }}
+    {{- partial "head.html" . -}}
     <body>
         {{- partial "header.html" . -}}
-        <div id="content">
-	<h1>HIDDEN PROJECT SINGLE</h1>
-        {{ partial "menu_hidden_project.html" . }}
-	<h1>{{ .Title }}</h1>
-	{{ .Content }}
+        <div id="main">
+	<!-- hidden_projects/single.html -->
+                <div id="menu">
+                        {{- partial "menu_hidden_project.html" . -}}
+                </div>
+                <div id="content">
+                        <h1>{{ .Title }}</h1>
+                        {{ .Content }}
+                </div>
         </div>
         {{- partial "footer.html" . -}}
     </body>

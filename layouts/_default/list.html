@@ -1,5 +1,9 @@
 {{ define "main" }}
-<h1>LIST</h1>
-{{ partial "menu.html" . }}
-{{ .Content }}
+<!-- list.html -->
+	<div id="menu">
+		{{ partial "menu.html" . }}
+	</div>
+	<div id="content">
+		{{ .Content }}
+	</div>
 {{ end }}
