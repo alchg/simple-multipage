@@ -1,0 +1,28 @@
+{{ $url := "" }}
+{{ if .IsPage }}
+	{{ $url = "../" }}
+	{{ if eq .Params.main_menu true }}
+			{{ $url = "../../" }}
+	{{ end }}
+{{ else }}
+	{{ $url = "./" }}
+{{ end }}
+
+{{ $top := "Top" }}
+{{ $text := "" }}
+{{ $text = .CurrentSection.Title }}
+{{ if .IsHome }}
+	{{ $text = $top }}
+{{ else }}
+	{{ if eq .Params.main_menu true }}
+		{{ if .IsPage }}
+			{{ $text = $top }}
+		{{ end }}
+	{{ end }}
+{{ end }}
+
+<header>
+	<div>
+		<a href="{{ $url }}">{{ $text }}</a>
+	</div>
+</header>
