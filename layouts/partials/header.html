@@ -8,7 +8,7 @@
 	{{ $url = "./" }}
 {{ end }}
 
-{{ $top := "Top" }}
+{{ $top := .Site.Title }}
 {{ $text := "" }}
 {{ $text = .CurrentSection.Title }}
 {{ if .IsHome }}
