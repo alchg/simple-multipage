@@ -1,15 +1,13 @@
-<h1>PARTIALS MENU</h1>
-<h2>All</h2>
-<ul>
+<details id="side_menu">
+	<summary>PARTIALS MENU</summary>
+	<b>All</b>
         {{ range .Site.Pages }}
         	<li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
         {{ end }}
-</ul>
-<h2>Main</h2>
-<ul>
+	<b>Main</b>
         {{ range .Site.Pages.ByParam "main_menu_order" }}
 		{{ if eq .Params.main_menu true }}
                 	<li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
 		{{ end }}
         {{ end }}
-</ul>
+</details>
