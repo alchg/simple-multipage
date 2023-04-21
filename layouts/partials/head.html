@@ -4,7 +4,7 @@
 	<meta name="twitter:site" content="{{ .Site.Params.twitter }}" />
 	<meta property="og:title" content="{{ .Site.Title }}" />
 	<meta property="og:description" content="{{ .Title}}" />
-	<meta property="og:image" content="{{ .Site.BaseURL }}/twitter.png" />
+	<meta property="og:image" content="{{ absURL "twitter.png" }}" />
 	<meta property="og:url" content="{{ absURL .RelPermalink }}" />
 	<title>{{ .Title }}</title>
 	<link rel="icon" href="/favicon.ico">
