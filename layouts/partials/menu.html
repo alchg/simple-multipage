@@ -7,7 +7,11 @@
 	<b>Main</b>
         {{ range .Site.Pages.ByParam "main_menu_order" }}
 		{{ if eq .Params.main_menu true }}
-                	<li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+			{{ if .IsSection }}
+                		<li><a target="_blank" href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+			{{ else }}
+                		<li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+			{{ end }}
 		{{ end }}
         {{ end }}
 </details>
