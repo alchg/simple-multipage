@@ -1,8 +1,9 @@
 {{ $url := "" }}
 {{ if .IsPage }}
-	{{ $url = "../" }}
 	{{ if eq .Params.main_menu true }}
-			{{ $url = "../../" }}
+			{{ $url = .Site.BaseURL }}
+	{{ else }}
+		{{ $url = "../" }}
 	{{ end }}
 {{ else }}
 	{{ $url = "./" }}
