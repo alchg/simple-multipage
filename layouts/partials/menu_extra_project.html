@@ -1,5 +1,5 @@
 <details id="side_menu">
-	<summary>PARTIALS HIDDEN PROJECT MENU</summary>
+	<summary>PARTIALS EXTRA PROJECT MENU</summary>
 	{{ $pages := where .Site.RegularPages "Section" .Section }}
 	{{ range $pages.ByParam "menu_order" }}
     		<li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
