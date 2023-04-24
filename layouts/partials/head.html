@@ -8,6 +8,10 @@
 	<meta property="og:url" content="{{ absURL .RelPermalink }}" />
 	<title>{{ .Title }}</title>
 	<link rel="icon" href="/favicon.ico">
-	<link rel="stylesheet" href="/css/style.css">
+	{{ if eq .Section "blog" }}
+		<link rel="stylesheet" href="/css/blog.css">
+	{{ else }}
+		<link rel="stylesheet" href="/css/style.css">
+	{{ end }}
 	<script src="/js/main.js"></script>
 </head>

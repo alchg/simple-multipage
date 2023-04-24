@@ -21,6 +21,9 @@
 		{{ end }}
 	{{ end }}
 {{ end }}
+{{ if eq .Section "blog" }}
+	{{ $text = .Site.Params.blog_title }}
+{{ end }}
 
 <header>
 	<div><img src="/top.png"></div>

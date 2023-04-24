@@ -1,0 +1,43 @@
+{{ define "main" }}
+	{{ $paginator := .Paginate (where .Site.RegularPages.ByDate.Reverse "Section" .Section ) 5 }}
+	<div id="content">
+		{{ range $paginator.Pagers }}
+			{{ if eq . $paginator }}
+				<div>{{ .PageNumber }}/{{ .TotalPages }}</div>
+				{{ range .Pages }}
+       					<div class="content_item">
+						<a href="{{ .RelPermalink }}">
+       	        				<div class="content_item_title">{{ .Title }}</div>
+						<div class="content_item_description">{{ .Params.description }}</div>
+						<div class="content_item_summary">{{ .Summary }}</div>
+						</a>
+       					</div>
+				{{ end }}
+			{{ end }}
+		{{ end }}
+		<div>
+			{{ if $paginator.HasPrev }}
+				<a href="{{ $paginator.Prev.URL }}">&lt;</a>
+			{{ else }}
+				&lt;
+			{{ end }}
+			&nbsp;&nbsp;
+			{{ range $paginator.Pagers }}
+				{{ if eq . $paginator }}
+					<b>{{ .PageNumber }}</b>
+				{{ else }}
+					<a href="{{ .URL }}">{{ .PageNumber }}</a>
+				{{ end }}
+			{{ end }}
+			&nbsp;&nbsp;
+			{{ if $paginator.HasNext }}
+				<a href="{{ $paginator.Next.URL }}">&gt;</a>
+			{{ else }}
+				&gt;
+			{{ end }}
+		</div>
+	</div>
+	<div id="menu">
+		{{ partial "menu_blog.html" . }}
+	</div>
+{{ end }}
