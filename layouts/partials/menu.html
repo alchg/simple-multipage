@@ -1,10 +1,5 @@
 <details id="side_menu">
 	<summary id="menu_switch">Open menu</summary>
-	<b>All</b>
-        {{ range .Site.Pages }}
-        	<li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
-        {{ end }}
-	<b>Main</b>
         {{ range .Site.Pages.ByParam "main_menu_order" }}
 		{{ if eq .Params.main_menu true }}
 			{{ if .IsSection }}
