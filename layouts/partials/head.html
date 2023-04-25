@@ -8,10 +8,15 @@
 	<meta property="og:url" content="{{ absURL .RelPermalink }}" />
 	<title>{{ .Title }}</title>
 	<link rel="icon" href="/favicon.ico">
+	{{ $blog_css := "blog.css" }}
 	{{ if eq .Section "blog" }}
-		<link rel="stylesheet" href="/css/blog.css">
+		<link rel="stylesheet" href="/css/{{ $blog_css }}">
+	{{ else if eq .Section "tags" }}
+		<link rel="stylesheet" href="/css/{{ $blog_css }}">
+	{{ else if eq .Section "categorise" }}
+		<link rel="stylesheet" href="/css/{{ $blog_css }}">
 	{{ else }}
+		<script src="/js/main.js"></script>
 		<link rel="stylesheet" href="/css/style.css">
 	{{ end }}
-	<script src="/js/main.js"></script>
 </head>

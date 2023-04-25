@@ -1,7 +1,7 @@
 <p>Hot Topics</p>
 <ul>
-	{{ $pages := where .Site.RegularPages.ByWeight.Reverse "Section" .Section }}
-	{{ range $pages.ByParam "menu_order" }}
+	{{ $pages := where .Site.RegularPages.ByWeight.Reverse ".Section" "blog" }}
+	{{ range $pages }}
 		{{ if ne .Weight 0 }} 
     		<li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
 		{{ end }}

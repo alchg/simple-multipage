@@ -23,6 +23,10 @@
 {{ end }}
 {{ if eq .Section "blog" }}
 	{{ $text = .Site.Params.blog_title }}
+{{ else if eq .Section "tags" }}
+	{{ $text = .Site.Params.blog_title }}
+{{ else if eq .Section "categorise" }}
+	{{ $text = .Site.Params.blog_title }}
 {{ end }}
 
 <header>
