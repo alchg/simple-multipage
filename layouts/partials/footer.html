@@ -1,3 +1,10 @@
 <footer>
-	{{ .Title }}
+	<div>
+	{{ $user := .Site.Params.twitter_user }}
+	{{ if $user }}
+		<a target="_blank" href="https://twitter.com/{{ $user }}">Twitter:{{ $user }}</a>
+	{{ else }}
+		{{ .Title }}
+	{{ end }}
+	</div>
 </footer>
