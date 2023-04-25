@@ -7,7 +7,7 @@ body {
 }
 header {
 	background: darkslateblue;
-	width: 100%;
+	width: -webkit-fill-available;
 	padding: 5px;
 	display: flex;
 }
@@ -27,7 +27,7 @@ div#menu {
 }
 div#content {
 	background: palegoldenrod;
-	width: 100%;
+	width: -webkit-fill-available;
 	padding: 10px;
 }
 code {
@@ -37,7 +37,7 @@ code {
 }
 footer {
 	background: darkslateblue;
-	width: 100%;
+	width: -webkit-fill-available;
 	padding: 5px;
 }
 @media(min-width: 1100px){
@@ -55,12 +55,12 @@ footer {
 	}
 	div#menu {
 		position: fixed;
-		width: 25%;
+		width: 20%;
 		height: 80%;
 		overflow: auto;
 	}
 	div#content {
-		margin-left: 27%;
+		margin-left: 23%;
 		margin-right: 10px;
 		border-radius: 10px;
 	}
