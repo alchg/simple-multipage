@@ -1,8 +1,8 @@
 <footer>
 	<div>
-	{{ $user := .Site.Params.twitter_user }}
+	{{ $user := replaceRE "@" "" .Site.Params.twitter_user }}
 	{{ if $user }}
-		<a target="_blank" href="https://twitter.com/{{ $user }}">Twitter:{{ $user }}</a>
+		<a target="_blank" href="https://twitter.com/{{ $user }}">TwitterID:@{{ $user }}</a>
 	{{ else }}
 		{{ .Title }}
 	{{ end }}
